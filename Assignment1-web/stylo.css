@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    z-index: 1;
+}
+
+
+
+/* Top Bar */
+.top-bar {
+    background-color: #ff0080;
+    color: white;
+    text-align: canter;
+    padding: 1.5rem;
+}
+
+.top-bar .highlight {
+    font-weight: bold;
+}
+
+.top-bar .contact-info {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Header Section */
+header {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #ff0080;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+}
+
+
+
+/* Hero Section */
+.hero {
+    background-image: url('wedding-collection2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+/* Products Section */
+.products {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+
+.product-item p {
+    margin: 5px 0;
+}
+
+/* Footer Section */
+footer {
+    background-color: #ff0080;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
