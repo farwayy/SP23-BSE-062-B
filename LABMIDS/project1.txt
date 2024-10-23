@@ -1,0 +1,1 @@
+Project 1 is an introductory project that focuses on the concepts of OOP. I created this project with my fellow. This systems provides multiple tasks to be performed by a SOFTWARE HOUSE. Managing, Adding, removing and many more..

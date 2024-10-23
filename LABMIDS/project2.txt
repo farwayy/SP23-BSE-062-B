@@ -1,0 +1,1 @@
+Project 2 focuses on database design using Data Structures. In this project, my main focus was on Library Management System on how the system works when someone borrow, return and perform other operstions in Library..
