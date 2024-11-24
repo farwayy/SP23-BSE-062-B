@@ -63,7 +63,6 @@ nav ul li a {
 
 
 
-/* Hero Section */
 .hero {
     background-image: url('wedding-collection2.jpg');
     background-size: cover;
@@ -118,7 +117,6 @@ nav ul li a {
     margin: 5px 0;
 }
 
-/* Footer Section */
 footer {
     background-color: #ff0080;
     color: white;
