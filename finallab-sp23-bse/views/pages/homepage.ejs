@@ -1,0 +1,700 @@
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11">
+    <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="/images/s70.JPG" class="rounded me-2" alt="Logo" style="width: 50px;">
+            <strong class="me-auto"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Never miss a beat! Get instant notifications and stay up-to-date with the latest offers and updates.
+        </div>
+        <!-- Left-aligned buttons -->
+        <div class="d-flex justify-content-start mt-2 pt-2 border-top">
+            <button type="button" class="btn btn-primary btn-sm me-2">Allow</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast"
+                >No,
+                Thanks</button>
+        </div>
+    </div>
+</div>
+
+<header>
+    <%- include('../partials/navbar') %>
+</header>
+
+<div class="text-light text-center py-2" style="background-color: #000000">
+    Use code 'freedelivery' at checkout to get free delivery on prepaid orders.
+</div>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/s5.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/s6.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/s7.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="container text-center mt-5" >
+    <h2>LEADING CHOICES</h2>
+    <a href="#" class="btn btn-outline-dark mb-4  custom-btn">View All</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s12.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s11.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal1"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title">SILVER FANCY SANDAL</h5>
+            <p class="text-center">Rs. 4,800</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s14.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s13.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal2"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title">GREEN FORMAL SLIPPERS</h5>
+            <p class="text-center">Rs. 3,800</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s9.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s10.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal3"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title">GIRLS GREY PUMPY</h5>
+            <p class="text-center">Rs. 3,200</p>
+        </div>
+    </div>
+</div>
+
+<div class="Image">
+    <img src="/images/s15.jpg" class="d-block w-100" alt="...">
+
+</div>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <!-- Product 1 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('SANDALS')">
+                <img src="/images/s16.jpg" class="img-fluid" alt="Golden Fancy Sandal">
+                <div class="product-title">SANDALS</div>
+            </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('SLIPPERS')">
+                <img src="/images/s17.jpg" class="img-fluid" alt="Silver Fancy Sandal">
+                <div class="product-title">SLIPPERS</div>
+            </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('SOFTYS')">
+                <img src="/images/s18.jpg" class="img-fluid" alt="Black Fancy Slipper">
+                <div class="product-title">SOFTYS</div>
+            </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('CHAPPALS')">
+                <img src="/images/s19.jpg" class="img-fluid" alt="Silver Fancy Sandal">
+                <div class="product-title">CHAPPALS</div>
+            </button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('SNEAKERS')">
+                <img src="/images/s20.jpg" class="img-fluid" alt="Black Fancy Slipper">
+                <div class="product-title">SNEAKERS</div>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center mt-5">
+    <h2>TRENDY SHOES FOR FASHIONISTAS</h2>
+    <a href="#" class="btn btn-outline-dark mb-4 custom-btn">View All</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s21.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s22.jpeg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal1"
+                >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title">SILVER FANCY SANDAL</h5>
+            <p class="text-center">Rs. 4,800</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s23.jpeg" alt="Default Image" class="product-image-default">
+                <img src="/images/s24.jpeg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal2"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title">GREEN FORMAL SLIPPERS</h5>
+            <p class="text-center">Rs. 3,800</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s25.jpeg" alt="Default Image" class="product-image-default">
+                <img src="/images/s26.jpeg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal3"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title"       <p class="text-center">Rs. 3,200</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="Image">
+    <img src="/images/s27.jpg" class="d-block w-100" alt="...">
+</div>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <!-- Product 1 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('PRET 1PC')">
+                <img src="/images/s28.jpg" class="img-fluid" alt="PRET 1PC">
+                <div class="product-title">PRET 1PC</div>
+            </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('PRET 2PC')">
+                <img src="/images/s29.jpg" class="img-fluid" alt="PRET 2PC">
+                <div class="product-title">PRET 2PC</div>
+            </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('PRET 3PC')">
+                <img src="/images/s30.jpg" class="img-fluid" alt="PRET 3PC">
+                <div class="product-title">PRET 3PC</div>
+            </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('UNSTITCHED 1PC')">
+                <img src="/images/s31.jpg" class="img-fluid" alt="UNSTITCHED 1PC">
+                <div class="product-title">UNSTITCHED 1PC</div>
+            </button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('UNSTITCHED 2PC')">
+                <img src="/images/s32.jpg" class="img-fluid" alt="UNSTITCHED 2PC">
+                <div class="product-title">UNSTITCHED 2PC</div>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container text-center mt-5" >
+    <h2>TRENDSETTING OUTFITS YOU’LL LOVE</h2>
+    <a href="#" class="btn btn-outline-dark mb-4  custom-btn" >View All</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s43.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s42.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal1"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" >2 PC PRINTED LAWN SUIT PL5032
+            </h5>
+            <p class="text-center">Rs. 3,800</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s44.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s45.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal2"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" >3 PC BABY PINK SUIT LO874</h5>
+            <p class="text-center">Rs. 4,998</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s46.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s47.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal3"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title">2 PC PINK LAWN SUIT </h5>
+            <p class="text-center">Rs. 3,600</p>
+        </div>
+    </div>
+</div>
+<div class="Image">
+    <img src="/images/s34.jpg" class="d-block w-100" alt="...">
+</div>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <!-- Product 1 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('KIDS SHOES')">
+                <img src="images/s35.jpg" class="img-fluid" alt="Golden Fancy Sandal">
+                <div class="product-title">KIDS SHOES</div>
+            </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('BOYS')">
+                <img src="images/s36.jpg" class="img-fluid" alt="Silver Fancy Sandal">
+                <div class="product-title">BOYS</div>
+            </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('GIRLS')">
+                <img src="images/s37.jpg" class="img-fluid" alt="Black Fancy Slipper">
+                <div class="product-title">GIRLS</div>
+            </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('BABIES')">
+                <img src="images/s38.jpg" class="img-fluid" alt="Silver Fancy Sandal">
+                <div class="product-title">BABIES</div>
+            </button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('SCHOOL SHOES')">
+                <img src="images/s39.jpg" class="img-fluid" alt="Black Fancy Slipper">
+                <div class="product-title">SCHOOL SHOES</div>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center mt-5" >
+    <h2>MINI MUST-HAVE</h2>
+    <a href="#" class="btn btn-outline-dark mb-4  custom-btn" >View All</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="images/s40.jpg" alt="Default Image" class="product-image-default">
+                <img src="images/s41.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal1"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" >BOYS BROWN SHOES</h5>
+            <p class="text-center">Rs. 3,500</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="images/s48.jpg" alt="Default Image" class="product-image-default">
+                <img src="images/s49.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal2"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" >GIRLS PINK JOGGERS</h5>
+            <p class="text-center">Rs. 4,200</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s50.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s51.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal3"
+                    >Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" >BOYS BLACK PUMPS</h5>
+            <p class="text-center">Rs. 2,900</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="Image">
+    <img src="/images/s52.jpg" class="d-block w-100" alt="...">
+</div>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <!-- Product 1 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('CLUTCHES')">
+                <img src="/images/s53.jpg" class="img-fluid" alt="PRET 1PC">
+                <div class="text-center">CLUTCHES</div>
+            </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('CROSS BODY')">
+                <img src="/images/s54.jpg" class="img-fluid" alt="PRET 2PC">
+                <div class="text-center">CROSS BODY</div>
+            </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('HAND BAGS')">
+                <img src="/images/s55.jpg" class="img-fluid" alt="PRET 3PC">
+                <div class="text-center">HAND BAGS</div>
+            </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('WALLETS')">
+                <img src="/images/s56.jpg" class="img-fluid" alt="UNSTITCHED 1PC">
+                <div class="text-center">WALLETS</div>
+            </button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('SHOULDER BAG')">
+                <img src="/images/s57.jpg" class="img-fluid" alt="UNSTITCHED 2PC">
+                <div class="text-center">SHOULDER BAGS</div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center mt-5" s>
+    <h2>MUST-HAVE BAGS OF THE SEASON</h2>
+    <a href="#" class="btn btn-outline-dark mb-4 custom-btn" s>View All</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s58.jpg" alt="Default Image" class="product-image-default">
+                <img src="/images/s59.jpeg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal1"
+                    s>Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" s>BLACK FORMAL SHOULDER BAG</h5>
+            <p class="text-center">Rs. 3,800</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s60.jpeg" alt="Default Image" class="product-image-default">
+                <img src="/images/s61.jpeg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal2"
+                    s>Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" s>BEIGE FORMAL HANDBAG</h5>
+            <p class="text-center">Rs. 4,400</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <img src="/images/s62.jpeg" alt="Default Image" class="product-image-default">
+                <img src="/images/s63.jpg" alt="Hover Image" class="product-image-hover">
+                <button class="quick-view-btn" data-toggle="modal" data-target="#quickViewModal3"
+                    s>Quick View</button>
+            </div>
+            <h5 class="text-center mt-3 product-title" s>PURPLE CASUAL WALLET</h5>
+            <p class="text-center">Rs. 2,300</p>
+        </div>
+    </div>
+</div>
+<div class="Image">
+    <img src="/images/s64.jpg" class="d-block w-100" alt="...">
+</div>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <!-- Product 1 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('WOMEN PERFUMES')">
+                <img src="/images/s65.jpg" class="img-fluid" alt="PRET 1PC">
+                <div class="text-center">WOMEN PERFUMES</div>
+            </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('MEN PERFUMES')">
+                <img src="/images/s66.jpg" class="img-fluid" alt="PRET 2PC">
+                <div class="text-center">MEN PERFUMES</div>
+            </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('WOMEN BODY MISTS')">
+                <img src="/images/s67.jpg" class="img-fluid" alt="PRET 3PC">
+                <div class="text-center">WOMEN BODY MISTS</div>
+            </button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('MEN BODY MISTS')">
+                <img src="/images/s68.jpg" class="img-fluid" alt="UNSTITCHED 1PC">
+                <div class="text-center">MEN BODY MISTS</div>
+            </button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-2 p-2 text-center">
+            <button type="button" class="product-btn" onclick="handleClick('KIDS PERFUMES')">
+                <img src="/images/s69.jpg" class="img-fluid" alt="UNSTITCHED 2PC">
+                <div class="text-center">KIDS PERFUMES</div>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="text-center mb-4-0" s>
+        <img src="/images/s70.JPG" alt="Logo">
+        <h2>INSTAGRAM FEED</h2>
+        <p>2M Followers</p>
+    </div>
+
+    <div id="customInstagramCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="custom-carousel-indicators">
+            <button type="button" data-bs-target="#customInstagramCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#customInstagramCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#customInstagramCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBUFQ8vIbHl/?img_index=1" target="_blank">
+                            <img src="/images/s77.jpg" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBQ5GwmohmX/?img_index=1" target="_blank">
+                            <img src="/images/s75.jpg" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBOOrAqoYIW/?img_index=1" target="_blank">
+                            <img src="/images/s78.jpg" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBL6vJjokK2/?img_index=1" target="_blank">
+                            <img src="/images/s79.jpg" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C84VsIsoWnT/?img_index=1" target="_blank">
+                            <img src="/images/s94.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBL1kf5oN1v/" target="_blank">
+                            <img src="/images/s76.jpg" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C_8qwE6IEeI/" target="_blank">
+                            <img src="/images/s88.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C_8qeSUofrh/" target="_blank">
+                            <img src="/images/s89.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C_5FQ7foZZo/" target="_blank">
+                            <img src="/images/s90.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C_xx7RgokB3/" target="_blank">
+                            <img src="/images/s91.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C_vJH7xIyQL/" target="_blank">
+                            <img src="/images/s92.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/C_gSbTtoHy5/" target="_blank">
+                            <img src="/images/s93.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBGZ3z2o5l4/?img_index=1" target="_blank">
+                            <img src="/images/s82.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBGbBF2IXiE/?img_index=1" target="_blank">
+                            <img src="/images/s80.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DBGa7hFoSfQ/?img_index=1" target="_blank">
+                            <img src="/images/s81.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DA_F2FvIEfL/" target="_blank">
+                            <img src="/images/s83.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DA3YpimoOaD/" target="_blank">
+                            <img src="/images/s84.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="https://www.instagram.com/p/DA21Og6IYrY/" target="_blank">
+                            <img src="/images/s85.JPG" class="d-block w-100" alt="Instagram post">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#customInstagramCarousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#customInstagramCarousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</div>
+
+<div class="container text-center mt-5" s>
+    <a href="#" class="btn btn-outline-dark mb-4 custom-btn" s>See More</a>
+</div>
+
+<div class="container text-center mt-5" s>
+    <h2>FROM THE JOURNAL</h2>
+    <a href="#" class="btn btn-outline-dark mb-4 custom-btn" s>View All</a>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-container">
+                <button type="button" class="product-btn" onclick="handleClick('Ladies Pret Trends 2024')">
+                    <img src="/images/s71.jpg" class="product-image-d">
+                </button>
+            </div>
+            <h6 class="text-center mt-3 product-title" >July 24, 2024</h6>
+            <p class="text-center">Ladies Pret Trends 2024</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <button type="button" class="product-btn"
+                    onclick="handleClick('The Essential Guide to Choosing Comfortable Ladies Shoes')">
+                    <img src="/images/s72.jpg" class="product-image-d">
+                </button>
+            </div>
+            <h6 class="text-center mt-3 product-title" >July 18, 2024</h6>
+            <p class="text-center">The Essential Guide to Choosing
+                Comfortable Ladies Shoes</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-container">
+                <button type="button" class="product-btn"
+                    onclick="handleClick('Elevate Your Spirits with Enchanting Stylo Fragrances')">
+                    <img src="/images/s73.jpg" class="product-image-d">
+                </button>
+            </div>
+            <h6 class="text-center mt-3 product-title" >July 10, 2024</h6>
+            <p class="text-center">Elevate Your Spirits with Enchanting
+                Stylo Fragrances</p>
+        </div>
+    </div>
+</div>

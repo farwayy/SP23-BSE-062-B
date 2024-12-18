@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Success</title>
+    <link rel="stylesheet" href="/css/mystyles.css">
+</head>
+<body>
+    <%- include("../partials/navbar") %>
+    <h1>Order Placed Successfully!</h1>
+    <p>Order ID: <%= order.id %></p>
+    <p>Total: $<%= order.total %></p>
+    <p>Date: <%= order.date %></p>
+    <h2>Customer Information</h2>
+    <p>Name: <%= order.customer.name %></p>
+    <p>Address: <%= order.customer.street %>, <%= order.customer.city %>, <%= order.customer.postalCode %></p>
+    <h2>Order Items</h2>
+    <ul>
+        <% order.items.forEach(item => { %>
+            <li><%= item.title %> - $<%= item.price %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= product.title %> - Product Details</title>
+    <link rel="stylesheet" href="/css/mystyles.css"> 
+</head>
+<body>
+    <%- include("../partials/navbar") %> 
+
+    <div class="product-details-container">
+        <div class="product-image">
+            <img src="<%= product.image %>" alt="<%= product.title %>">
+        </div>
+        <div class="product-info">
+            <h1><%= product.title %></h1>
+            <p><strong>Price:</strong> $<%= product.price %></p>
+            <p><strong>Category:</strong> <%= product.category %></p>
+            <p><strong>Description:</strong> <%= product.description %></p>
+            <p><strong>Color:</strong> <%= product.color %></p>
+            
+            <!-- Add to Cart Button -->
+            <form action="/add-to-cart/<%= product._id %>" method="POST">
+                <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+            </form>            
+        </div>
+    </div>
+
+</body>
+</html>

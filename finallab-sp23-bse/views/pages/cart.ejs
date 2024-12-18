@@ -1,0 +1,30 @@
+<!-- cart.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/css/mystyles.css">
+</head>
+<body>
+    <%- include("../partials/navbar") %>
+    <h1>Your Cart</h1>
+    <div class="cart-container">
+        <% if (products.length === 0) { %>
+            <p>Your cart is empty.</p>
+        <% } else { %>
+            <% products.forEach(product => { %>
+                <div class="cart-item">
+                    <img src="<%= product.image %>" alt="<%= product.title %>">
+                    <h2><%= product.title %></h2>
+                    <p>Price: $<%= product.price %></p>
+                </div>
+            <% }) %>
+            <h3>Total: $<%= products.reduce((total, product) => total + product.price, 0) %></h3>
+            <form action="/checkout" method="POST">
+                <button type="submit" class="btn-checkout">Checkout</button>
+            </form>
+        <% } %>
+    </div>
+</body>
+</html>
