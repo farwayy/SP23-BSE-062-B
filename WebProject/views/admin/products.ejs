@@ -1,0 +1,135 @@
+<h3><%- pageTitle %></h3>
+
+<a href="/admin/products/create" class="btn btn-info">Create New Product</a>
+<div>
+    Page <%= page %> of <%= totalPages %>
+</div>
+
+<!-- Search and Filter Form -->
+<form method="GET" action="/admin/products" class="mb-3">
+    <div class="row">
+        <!-- Search -->
+        <div class="col-md-4">
+            <input type="text" name="search" class="form-control" placeholder="Search by Title or Description"
+                value="<%= search %>" />
+        </div>
+
+        <!-- Sort -->
+        <div class="col-md-3">
+            <select name="sort" class="form-control">
+                <option value="">Sort by</option>
+                <option value="price_asc" <%=sort==='price_asc' ? 'selected' : '' %>>Price: Low to High</option>
+                <option value="price_desc" <%=sort==='price_desc' ? 'selected' : '' %>>Price: High to Low</option>
+                <option value="title_asc" <%=sort==='title_asc' ? 'selected' : '' %>>Title: A to Z</option>
+                <option value="title_desc" <%=sort==='title_desc' ? 'selected' : '' %>>Title: Z to A</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+</form>
+
+<!-- Product Table -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Picture</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (products.length> 0) { %>
+            <% products.forEach(product=> { %>
+                <tr>
+                    <td>
+                        <%= product._id %>
+                    </td>
+                    <td>
+                        <%= product.title %>
+                    </td>
+                    <td>
+                        <%= product.price %>
+                    </td>
+                    <td>
+                        <%= product.description %>
+                    </td>
+                    <td><img src="/<%= product.picture %>" alt="Product Image" width="100"></td>
+                    <td>
+                        <a href="/admin/products/edit/<%= product._id %>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/admin/products/delete/<%= product._id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                <% }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6" class="text-center">No products found</td>
+                        </tr>
+                        <% } %>
+    </tbody>
+</table>
+
+<!-- Pagination -->
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item <%= page === 1 ? 'disabled' : '' %>">
+            <a class="page-link"
+                href="/admin/products/<%= page - 1 %>?search=<%= search %>&sort=<%= sort %>">Previous</a>
+        </li>
+        <% for (let i=1; i <=totalPages; i++) { %>
+            <li class="page-item <%= page === i ? 'active' : '' %>">
+                <a class="page-link" href="/admin/products/<%= i %>?search=<%= search %>&sort=<%= sort %>">
+                    <%= i %>
+                </a>
+            </li>
+            <% } %>
+                <li class="page-item <%= page === totalPages ? 'disabled' : '' %>">
+                    <a class="page-link"
+                        href="/admin/products/<%= page + 1 %>?search=<%= search %>&sort=<%= sort %>">Next</a>
+                </li>
+    </ul>
+</nav>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.querySelector("input[name='search']");
+        const sortSelect = document.querySelector("select[name='sort']");
+        const paginationLinks = document.querySelectorAll(".pagination a");
+
+        // Apply Filters or Search on Change
+        function applyFilters() {
+            const search = searchInput.value.trim();
+            const sort = sortSelect.value;
+            const urlParams = new URLSearchParams();
+
+            if (search) urlParams.append("search", search);
+            if (sort) urlParams.append("sort", sort);
+
+            window.location.href = `/admin/products?${urlParams.toString()}`;
+        }
+
+        // Event Listeners
+        searchInput.addEventListener("change", applyFilters);
+        sortSelect.addEventListener("change", applyFilters);
+
+        // Pagination Handling
+        paginationLinks.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const url = new URL(link.href);
+                const params = new URLSearchParams(url.search);
+
+                if (searchInput.value) params.set("search", searchInput.value);
+                if (sortSelect.value) params.set("sort", sortSelect.value);
+
+                window.location.href = `/admin/products/${url.pathname.split("/").pop()}?${params.toString()}`;
+            });
+        });
+    });
+
+</script>

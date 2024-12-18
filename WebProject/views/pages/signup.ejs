@@ -1,0 +1,26 @@
+<head>
+    <link rel="stylesheet" href="/css/formStyle.css">
+</head>
+<div class="container">
+    <div class="form-container">
+        <form action="/admin/register" method="post">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" name="name" required/>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" class="form-control" name="email" required/>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password" required/>
+            </div>
+            <div class="form-group">
+                <label for="">Confirm Password</label>
+                <input type="password" class="form-control" name="confirmPassword" required/>
+            </div>
+            <button type="submit" class="btn btn-info">Sign Up</button>
+        </form>
+    </div>
+</div>

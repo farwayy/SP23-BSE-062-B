@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart - Stylo</title>
+    <link rel="stylesheet" href="/css/mystyles.css">
+</head>
+<body>
+    <%- include("../partials/navbar") %> 
+
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+
+        <% if (cart.length > 0) { %>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cart.forEach(item => { %>
+                        <tr>
+                            <td><img src="<%= item.image %>" alt="<%= item.title %>" class="cart-image"></td>
+                            <td><%= item.title %></td>
+                            <td>$<%= item.price %></td>
+                            <td>
+                                <form action="/update-cart/<%= item._id %>" method="POST">
+                                    <input type="number" name="quantity" value="<%= item.quantity %>" min="1" max="10">
+                                    <button type="submit" class="btn-update-quantity">Update</button>
+                                </form>
+                            </td>
+                            <td>$<%= item.price * item.quantity %></td>
+                            <td>
+                                <form action="/remove-from-cart/<%= item._id %>" method="POST">
+                                    <button type="submit" class="btn-remove-item">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+            <div class="cart-total">
+                <h2>Total: $<%= cart.reduce((total, item) => total + (item.price * item.quantity), 0) %></h2>
+                <a href="/checkout" class="btn-checkout">Proceed to Checkout</a>
+            </div>
+        <% } else { %>
+            <p>Your cart is empty. <a href="/">Continue Shopping</a></p>
+        <% } %>
+    </div>
+</body>
+</html>
