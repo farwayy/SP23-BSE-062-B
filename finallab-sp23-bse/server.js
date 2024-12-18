@@ -12,29 +12,9 @@ const server = express();
 const PORT = 3000;
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/ecommerce', {
+mongoose.connect('mongodb://localhost:stylo', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-});
-
-const orderSchema = new mongoose.Schema({
-    orderId: { type: String, required: true, unique: true },
-    customer: {
-        name: { type: String, required: true },
-        street: { type: String, required: true },
-        city: { type: String, required: true },
-        postalCode: { type: String, required: true },
-    },
-    items: [
-        {
-            id: { type: Number, required: true },
-            title: { type: String, required: true },
-            price: { type: Number, required: true },
-            image: { type: String, required: true },
-        },
-    ],
-    total: { type: Number, required: true },
-    date: { type: Date, default: Date.now },
 });
 
 const Order = mongoose.model('Order', orderSchema);
@@ -44,7 +24,7 @@ server.use(express.static(path.join(__dirname, 'public'))); // Serve static file
 server.use(bodyParser.urlencoded({ extended: true })); // Parse form data
 server.use(
     session({
-        secret: 'secret-key',
+        secret: 'hey i am farwa',
         resave: false,
         saveUninitialized: true,
     })
@@ -61,8 +41,21 @@ const sampleProducts = [
 ];
 
 // Home Route
-server.get('/', (req, res) => {
-    res.render('index');
+server.get("/", async (req, res) => {
+  let Product = require("./models/product.model");
+  let products = await Product.find();
+  return res.render("pages/homepage");
+});
+server.get("/category/:name", async (req, res) => {
+  let Product = require("./models/product.model");
+  let categoryName = req.params.name;
+  try {
+    let products = await Product.find({ category: categoryName });
+    return res.render("pages/category", { products, categoryName });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send("Server Error");
+  }
 });
 
 // Cart Route
